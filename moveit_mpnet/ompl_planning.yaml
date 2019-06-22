@@ -1,0 +1,123 @@
+planner_configs:
+  SBLkConfigDefault:
+    type: geometric::SBL
+  LBKPIECEkConfigDefault:
+    type: geometric::LBKPIECE
+  RRTkConfigDefault:
+    type: geometric::RRT
+  RRTConnectkConfigDefault:
+    type: geometric::RRTConnect
+  LazyRRTkConfigDefault:
+    type: geometric::LazyRRT
+  ESTkConfigDefault:
+    type: geometric::EST
+  KPIECEkConfigDefault:
+    type: geometric::KPIECE
+  RRTStarkConfigDefault:
+    type: geometric::RRTstar
+    optimization_objective: PathLengthOptimizationObjective
+  BKPIECEkConfigDefault:
+    type: geometric::BKPIECE
+  BITStarkConfigDefault:
+    type: geometric::BITstar
+  MPNetkConfigDefault:
+    type: geometric::MPNet
+    # samples_per_batch: 100
+    # use_k_nearest: 1
+    # optimization_objective: PathLengthOptimizationObjective
+    # find_approximate_solutions: 0
+    # use_strict_queue_ordering: 0
+    # use_graphPtr_pruning: 1
+    # prune_threshold_as_fractional_cost_change: 0.05 
+    ### nothing below here tried to modify
+    # rewire_factor: 2.0
+    # delay_rewiring_to_first_solution: 0
+    # use_just_in_time_sampling: 0
+    # drop_unconnected_samples_on_prune: 1
+    # stop_on_each_solution_improvement: 0
+left_arm:
+  # default_planner_config: RRTConnectkConfigDefault
+  # default_planner_config: RRTStarkConfigDefault
+  # default_planner_config: BITStarkConfigDefault
+  default_planner_config: MPNetkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+    - BITStarkConfigDefault
+    - MPNetkConfigDefault
+  projection_evaluator: joints(left_s0,left_s1)
+  longest_valid_segment_fraction: 0.01
+right_arm:
+  # default_planner_config: RRTConnectkConfigDefault
+  # default_planner_config: RRTStarkConfigDefault
+  # default_planner_config: BITStarkConfigDefault
+  default_planner_config: MPNetkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+    - BITStarkConfigDefault
+    - MPNetkConfigDefault
+  projection_evaluator: joints(right_s0,right_s1)
+  longest_valid_segment_fraction: 0.01
+both_arms:
+  # default_planner_config: RRTConnectkConfigDefault
+  # default_planner_config: RRTStarkConfigDefault
+  # default_planner_config: BITStarkConfigDefault
+  default_planner_config: MPNetkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+    - BITStarkConfigDefault
+    - MPNetkConfigDefault
+  projection_evaluator: joints(right_s0,right_s1)
+  longest_valid_segment_fraction: 0.01
+left_hand:
+  # default_planner_config: RRTConnectkConfigDefault
+  # default_planner_config: RRTStarkConfigDefault
+  # default_planner_config: BITStarkConfigDefault
+  default_planner_config: MPNetkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+    - BITStarkConfigDefault
+    - MPNetkConfigDefault
+right_hand:
+  # default_planner_config: RRTConnectkConfigDefault
+  # default_planner_config: RRTStarkConfigDefault
+  # default_planner_config: BITStarkConfigDefault
+  default_planner_config: MPNetkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+    - BITStarkConfigDefault
+    - MPNetkConfigDefault
