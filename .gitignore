@@ -1,3 +1,4 @@
 *.deb
 *.tgz
 experiment_data/*
+.vscode/*
