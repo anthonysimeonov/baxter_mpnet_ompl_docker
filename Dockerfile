@@ -309,6 +309,8 @@ RUN git clone --recursive https://github.com/pytorch/pytorch
 
 # Build pytorch with setup script
 WORKDIR /pytorch  
+# Set below environment variable for compatibility with newer RTX cards
+ENV TORCH_CUDA_ARCH_LIST 7.0
 RUN python setup.py install 
 
 # Copy in more moveit source code necessary for running MPNet in OMPL (turn off simplify solutions and path interpolation)   
